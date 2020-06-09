@@ -63,7 +63,9 @@
             эффективные решения <br />
             для вашего бизнеса
           </h1>
-          <a href="#" class="button">Заказать услугу</a>
+          <button data-modal-open type="submit" class="button">
+            Заказать услугу
+          </button>
         </div>
       </section>
 
@@ -276,10 +278,9 @@
                     class="link link-facebook"
                     aria-label="Ссылка на Facebook"
                     ><svg class="icon-link" width="20" height="20">
-                      <use
-                        href="./image/symbol-defs.svg#icon-facebook"
-                      ></use></svg
-                  ></a>
+                      <use href="./image/symbol-defs.svg#icon-facebook"></use>
+                    </svg>
+                  </a>
                 </li>
                 <li class="item">
                   <a
@@ -568,15 +569,69 @@
           <!--правая сторона-->
 
           <div class="subscription">
-            <p class="join-in">подписаться на рассылку</p>
-            <a href="#" class="button"
-              >Подписаться<svg class="icon-send" width="24" height="24">
-                <use href="./image/symbol-defs.svg#icon-send"></use></svg
-            ></a>
+            <!-- <p class="join-in">подписаться на рассылку</p> -->
+            <form class="form js-speaker-form">
+              <label for="mail" class="join-in">подписаться на рассылку</label>
+              <input type="email" name="mail" id="mail" placeholder="E-mail" />
+              <button type="submit" class="button">
+                Подписаться<svg class="icon-send" width="24" height="24">
+                  <use href="./image/symbol-defs.svg#icon-send"></use>
+                </svg>
+              </button>
+            </form>
           </div>
         </div>
         <p class="dev-team">2020 | Developed by GoIT Students</p>
       </div>
     </footer>
+
+    <script src="./js/subscribe.js"></script>
+
+    <!-- модальное окно -->
+    <div class="backdrop is-hidden">
+      <form class="form js-speaker-form">
+        <p class="description">Оставьте свои данные, мы Вам перезвоним</p>
+
+        <div class="form-field">
+          <label for="name"></label>
+          <input type="name" name="name" id="name" placeholder="Имя" />
+        </div>
+
+        <div class="form-field">
+          <label for="tel"></label>
+          <input type="tel" name="tel" id="tel" placeholder="Телефон" />
+        </div>
+
+        <div class="form-field">
+          <label for="mail"></label>
+          <input type="email" name="mail" id="mail" placeholder="Почта" />
+        </div>
+
+        <div class="form-field comment">
+          <label for="comment"></label>
+          <textarea
+            class="comment"
+            name="comment"
+            id="comment"
+            rows="8"
+            placeholder="Комментарий"
+          ></textarea>
+        </div>
+
+        <div class="checkbox">
+          <input type="checkbox" name="policy" id="policy" />
+          <label for="policy"
+            >Согласен с рассылкой и принимаю
+            <a href="./index.html">Условия договора</a></label
+          >
+        </div>
+
+        <button type="submit" class="button">Отправить</button>
+
+        <button data-modal-close class="close">
+          <img src="./image/close.svg" alt="крестик" />
+        </button>
+      </form>
+    </div>
   </body>
 </html>
