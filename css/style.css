@@ -826,14 +826,24 @@ img {
 }
 
 /* оформляет бекдроп */
+.backdrop.is-hidden {
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+}
+
 .backdrop {
-  /* display: none; */
   position: fixed;
   top: 0;
   left: 0;
+  right: 0;
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.2);
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .backdrop .form {
@@ -864,10 +874,6 @@ img {
   color: var(--primary-color);
 }
 
-.backdrop .form-field {
-  border: 1px solid rgba(33, 33, 33, 0.2);
-  border-radius: 4px;
-}
 .backdrop .form-field:nth-child(-n + 4) {
   margin-bottom: 28px;
 }
@@ -877,22 +883,32 @@ img {
   width: 100%;
   height: 38px;
   padding-left: 16px;
-  padding-top: 12px;
-  padding-right: 44px;
-  padding-bottom: 12px;
+
   box-shadow: none;
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
 }
-.form-field.comment {
+.form-field input::placeholder {
+  color: #2a2a2a;
+}
+
+.comment {
   margin-bottom: 20px;
+  height: 120px;
 }
+
 .backdrop textarea {
   width: 100%;
   height: 120px;
-  resize: none;
   padding-left: 16px;
   padding-top: 12px;
-  padding-right: 44px;
-  border: none;
+  resize: none;
+  box-shadow: none;
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+}
+.form-field textarea::placeholder {
+  color: #2a2a2a;
 }
 
 .backdrop .checkbox {
@@ -907,6 +923,10 @@ img {
   line-height: 1.71;
   letter-spacing: 0.03em;
   color: var(--secondary-color);
+}
+.checkbox-link {
+  color: var(--accent-color);
+  text-decoration: underline;
 }
 
 .checkbox input {
@@ -929,10 +949,12 @@ img {
     0px 1px 3px rgba(0, 0, 0, 0.12);
 }
 
+.backdrop .button-submit {
+  display: flex;
+  justify-content: center;
+}
 .backdrop .button {
   border: none;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
-  padding: 0;
-  margin: 0;
-  align-items: center;
+  cursor: pointer;
 }

@@ -586,52 +586,57 @@
     </footer>
 
     <!-- модальное окно -->
-    <div class="backdrop is-hidden">
+    <div class="backdrop is-hidden" data-modal>
       <form class="form js-speaker-form">
         <p class="description">Оставьте свои данные, мы Вам перезвоним</p>
 
         <div class="form-field">
-          <label for="name"></label>
           <input type="name" name="name" id="name" placeholder="Имя" />
+          <label for="name"></label>
         </div>
 
         <div class="form-field">
-          <label for="tel"></label>
           <input type="tel" name="tel" id="tel" placeholder="Телефон" />
+          <label for="tel"></label>
         </div>
 
         <div class="form-field">
-          <label for="mail"></label>
           <input type="email" name="mail" id="mail" placeholder="Почта" />
+          <label for="mail"></label>
         </div>
 
         <div class="form-field comment">
-          <label for="comment"></label>
           <textarea
-            class="comment"
             name="comment"
             id="comment"
             rows="8"
             placeholder="Комментарий"
           ></textarea>
+          <label for="comment"></label>
         </div>
 
         <div class="checkbox">
           <input type="checkbox" name="policy" id="policy" />
           <label for="policy"
             >Согласен с рассылкой и принимаю
-            <a href="./index.html">Условия договора</a></label
+            <a class="checkbox-link" href="./index.html"
+              >Условия договора</a
+            ></label
           >
         </div>
 
-        <button type="submit" class="button">Отправить</button>
+        <div class="button-submit">
+          <button type="submit" class="button">Отправить</button>
+        </div>
 
-        <button data-modal-close class="close">
+        <button class="close" data-modal-close>
           <img src="./image/close.svg" alt="крестик" />
         </button>
       </form>
     </div>
+
+    <script src="./js/modal.js"></script>
+
     <script src="./js/subscribe.js"></script>
-    <script src="./js/modals.js"></script>
   </body>
 </html>
