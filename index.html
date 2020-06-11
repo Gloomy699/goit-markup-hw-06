@@ -590,30 +590,34 @@
       <form class="form js-speaker-form">
         <p class="description">Оставьте свои данные, мы Вам перезвоним</p>
 
-        <div class="form-field">
-          <input type="name" name="name" id="name" placeholder=" " />
-          <label for="name">Имя</label>
-        </div>
+        <label class="form-field">
+          <input type="name" class="form-input" name="name" placeholder=" " />
+          <span class="form-label">Имя</span>
+          <span class="icon"></span>
+        </label>
 
-        <div class="form-field">
-          <input type="tel" name="tel" id="tel" placeholder=" " />
-          <label for="tel">Телефон</label>
-        </div>
+        <label class="form-field">
+          <input type="tel" class="form-input" name="tel" placeholder=" " />
+          <span class="form-label">Телефон</span>
+          <span class="icon"></span>
+        </label>
 
-        <div class="form-field">
-          <input type="email" name="mail" id="mail" placeholder=" " />
-          <label for="mail">Почта</label>
-        </div>
-
-        <div class="form-field comment">
-          <textarea
-            name="comment"
-            id="comment"
-            rows="8"
+        <label class="form-field">
+          <input
+            type="email"
+            class="form-input"
+            name="mail"
+            id="mail"
             placeholder=" "
-          ></textarea>
-          <label for="comment">Комментарий</label>
-        </div>
+          />
+          <span class="form-label">Почта</span>
+          <span class="icon"></span>
+        </label>
+
+        <label class="form-field comment">
+          <textarea name="comment" rows="8" placeholder=" "></textarea>
+          <span class="form-label">Комментарий</span>
+        </label>
 
         <div class="checkbox">
           <input type="checkbox" name="policy" id="policy" />
