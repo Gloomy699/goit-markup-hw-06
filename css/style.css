@@ -896,7 +896,7 @@ img {
 
 .form-field:focus-within > .form-label,
 .form-input:not(:placeholder-shown) + .form-label {
-  transform: translateY(-40px) translateX(-27px);
+  transform: translateY(-40px) translateX(-15px);
   color: var(--accent-color);
 }
 
@@ -905,9 +905,11 @@ img {
 }
 
 .backdrop .form-input {
-  background-color: #fff;
   width: 100%;
   height: 38px;
+  display: block;
+  background-color: #fff;
+
   margin: 0;
   padding: 10px 20px;
   padding-left: 40px;
@@ -916,6 +918,10 @@ img {
   box-shadow: none;
   border: 1px solid rgba(33, 33, 33, 0.2);
   border-radius: 4px;
+  outline: none;
+}
+.backdrop .form-input:focus {
+  border: 1px solid var(--accent-color);
 }
 
 .icon {
@@ -926,13 +932,10 @@ img {
   transform: translateY(-50%);
 
   display: inline-block;
-  width: 20px;
-  height: 20px;
-  background-color: tomato;
 }
 
 .form-field:focus-within > .icon {
-  background-color: blue;
+  fill: var(--accent-color);
 }
 
 .comment {
@@ -953,11 +956,16 @@ img {
   box-shadow: none;
   border: 1px solid rgba(33, 33, 33, 0.2);
   border-radius: 4px;
+  outline: none;
 }
 .comment .form-label {
   position: absolute;
   top: 20px;
   left: 16px;
+}
+
+.backdrop textarea:focus {
+  border: 1px solid var(--accent-color);
 }
 
 .comment:focus-within > .form-label,
@@ -966,14 +974,42 @@ img {
   color: var(--accent-color);
 }
 
-.backdrop .checkbox {
+.field-polisy {
   display: flex;
-  justify-content: center;
-  margin-bottom: 30px;
   align-items: center;
+  margin-bottom: 30px;
+}
 
-  font-style: normal;
-  font-weight: normal;
+.field-polisy .checkbox {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+.field-polisy .icon-checkbox {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  margin-right: 5px;
+  border: 2px solid #2a2a2a;
+  border-radius: 4px;
+  transition: transform 250ms linear;
+}
+
+.checkbox:checked + .icon-checkbox {
+  border-color: transparent;
+  background-color: var(--accent-color);
+  background-image: url(../image/check.svg);
+  background-size: contain;
+  background-origin: border-box;
+}
+
+.checkbox-policy {
   font-size: 14px;
   line-height: 1.71;
   letter-spacing: 0.03em;
@@ -982,13 +1018,6 @@ img {
 .checkbox-link {
   color: var(--accent-color);
   text-decoration: underline;
-}
-
-.checkbox input {
-  width: 15px;
-  height: 15px;
-  padding: 0;
-  margin-right: 8px;
 }
 
 .backdrop .close {
