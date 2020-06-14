@@ -562,6 +562,7 @@ img {
   border-radius: 4px;
   background-color: #2f303a;
   padding-left: 12px;
+  color: var(--secondary-color);
 }
 .subscription .join-in {
   font-weight: 700;
@@ -962,14 +963,16 @@ img {
   position: absolute;
   top: 20px;
   left: 16px;
+
+  transition: transform 250ms linear;
 }
 
 .backdrop textarea:focus {
   border: 1px solid var(--accent-color);
 }
 
-.comment:focus-within > .form-label,
-.form-input:not(:placeholder-shown) + .form-label {
+.form-comment:focus-within > .form-label,
+.form-comment:not(:placeholder-shown) + .form-label {
   transform: translateY(-40px) translateX(-15px);
   color: var(--accent-color);
 }
